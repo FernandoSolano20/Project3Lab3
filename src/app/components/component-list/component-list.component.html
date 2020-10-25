@@ -1,0 +1,65 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Buscar"
+          [(ngModel)]="name"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchName()"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Lista de componentes</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let component of components; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveComponent(component, i)"
+        >
+          {{ component.name }}
+        </li>
+      </ul>
+  
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentComponent">
+        <h4>Componente</h4>
+        <div>
+          <label><strong>Nombre:</strong></label> {{ currentComponent.name }}
+        </div>
+        <div>
+          <label><strong>Descripción:</strong></label>
+          {{ currentComponent.description }}
+        </div>
+        <div>
+          <label><strong>Máquina:</strong></label>
+          {{ currentComponent.machineId }}
+        </div>
+        <div>
+          <label><strong>Comentarios:</strong></label>
+          {{ currentComponent.comments }}
+        </div>
+  
+        <a class="badge badge-warning" routerLink="/components/{{ currentComponent.id }}">
+          Editar
+        </a>
+      </div>
+  
+      <div *ngIf="!currentComponent">
+        <br />
+        <p>Seleccione un componente...</p>
+      </div>
+    </div>
+  </div>
+  

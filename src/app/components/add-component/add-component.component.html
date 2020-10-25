@@ -1,0 +1,59 @@
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="component.name"
+            name="name"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="component.description"
+            name="description"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="machineId">Id máquina</label>
+          <select
+            class="form-control"
+            id="machineId"
+            required
+            name="machineID"
+            [(ngModel)]="component.machineId">
+            <option *ngFor="let machine of machines" [ngValue]="machine.id">{{machine.name}}</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="comments">Comentarios</label>
+          <input
+            type="text"
+            class="form-control"
+            id="comments"
+            [(ngModel)]="component.comments"
+            name="comments"
+          />
+        </div>
+  
+        <button (click)="saveComponent()" class="btn btn-success">Registrar</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Componente registrado con éxito!</h4>
+        <button class="btn btn-success" (click)="newComponent()">Agregar</button>
+      </div>
+    </div>
+  </div>
+  
