@@ -9,7 +9,7 @@ import { MachineService } from 'src/app/services/machine.service';
 export class MachineListComponent implements OnInit {
 
   machines: any;
-  currentMachines = null;
+  currentMachine = null;
   currentIndex = -1;
   name = '';
 
@@ -33,12 +33,12 @@ export class MachineListComponent implements OnInit {
 
   refreshList(): void {
     this.retrieveMachines();
-    this.currentMachines = null;
+    this.currentMachine = null;
     this.currentIndex = -1;
   }
 
   setActiveMachine(machine, index): void {
-    this.currentMachines = machine;
+    this.currentMachine = machine;
     this.currentIndex = index;
   }
 

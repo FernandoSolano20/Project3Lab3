@@ -1,0 +1,70 @@
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="currentMachine" class="edit-form">
+      <h4>Máquina</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentMachine.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentMachine.description"
+            name="description"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="price">Fecha de último mantenimiento</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastDateMaintenance"
+            [(ngModel)]="currentMachine.lastDateMaintenance"
+            name="lastDateMaintenance"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="quantity">Estado</label>
+          <input
+            type="text"
+            class="form-control"
+            id="state"
+            [(ngModel)]="currentMachine.state"
+            name="state"
+          />
+        </div>
+  
+  
+      </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteMachine()">
+        Borrar
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateMachine()"
+      >
+        Actualizar
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentMachine">
+      <br />
+      <p>No se pudo acceder a este máquina...</p>
+    </div>
+  </div>
+  

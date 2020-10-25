@@ -38,6 +38,7 @@
         <div class="form-group">
           <label for="lastDateMaintenance">Fecha de último mantenimiento</label>
           <input
+          type="date"
             class="form-control"
             id="lastDateMaintenance"
             [(ngModel)]="machine.lastDateMaintenance"
@@ -46,20 +47,12 @@
         </div>
   
         <div class="form-group">
-          <label for="lastDateMaintenance">Estado</label>
-          <input type="radio"
+          <label for="state">Estado</label>
+          <input type="text"
             class="form-control"
             id="active"
-            [(ngModel)]="machine.lastDateMaintenance"
-            name="lastDateMaintenance"
+            name="state"
             value="true"
-          />
-          <input type="radio"
-            class="form-control"
-            id="inactive"
-            [(ngModel)]="machine.lastDateMaintenance"
-            name="lastDateMaintenance"
-            value="false"
           />
         </div>
   

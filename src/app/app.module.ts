@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddMachineComponent } from './components/add-machine/add-machine.component';
 import { MachineListComponent } from './components/machine-list/machine-list.component';
+import { MachineDetailsComponent } from './components/machine-details/machine-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddMachineComponent,
-    MachineListComponent
+    MachineListComponent,
+    MachineDetailsComponent
   ],
   imports: [
     BrowserModule,
