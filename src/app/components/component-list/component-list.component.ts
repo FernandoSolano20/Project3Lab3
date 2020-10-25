@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ComponentService } from 'src/app/services/component.service';
+import { MachineService } from 'src/app/services/machine.service';
 
 @Component({
   selector: 'app-component-list',
@@ -13,7 +14,10 @@ export class ComponentListComponent implements OnInit {
   currentIndex = -1;
   name = '';
 
-  constructor(private componentService: ComponentService) { }
+  constructor(
+    private componentService: ComponentService,
+    private machineService: MachineService
+  ) { }
 
   ngOnInit(): void {
     this.retrieveComponents();
@@ -38,6 +42,15 @@ export class ComponentListComponent implements OnInit {
   }
 
   setActiveComponent(component, index): void {
+    this.machineService.get(component.machineId)
+      .subscribe(
+        data => {
+          component.machine = data.name;
+        },
+        error => {
+          console.log(error);
+        }
+      );
     this.currentComponent = component;
     this.currentIndex = index;
   }

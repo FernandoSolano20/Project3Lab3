@@ -1,26 +1,27 @@
 <div style="width: 400px; margin: auto;">
-    <div class="submit-form">
-      <div *ngIf="!submitted">
+    <div *ngIf="currentComponent" class="edit-form">
+      <h4>Componente</h4>
+      <form>
         <div class="form-group">
           <label for="name">Nombre</label>
           <input
             type="text"
             class="form-control"
             id="name"
-            required
-            [(ngModel)]="component.name"
+            [(ngModel)]="currentComponent.name"
             name="name"
+            required="true"
           />
         </div>
-  
         <div class="form-group">
           <label for="description">Descripción</label>
           <input
+            type="text"
             class="form-control"
             id="description"
-            required
-            [(ngModel)]="component.description"
+            [(ngModel)]="currentComponent.description"
             name="description"
+            required="true"
           />
         </div>
   
@@ -31,7 +32,7 @@
             id="machineId"
             required
             name="machineID"
-            [(ngModel)]="component.machineId">
+            [(ngModel)]="currentComponent.machineId">
             <option *ngFor="let machine of machines" [ngValue]="machine.id">{{machine.name}}</option>
           </select>
         </div>
@@ -42,18 +43,31 @@
             type="text"
             class="form-control"
             id="comments"
-            [(ngModel)]="component.comments"
+            [(ngModel)]="currentComponent.comments"
             name="comments"
           />
         </div>
   
-        <button (click)="saveComponent()" class="btn btn-success">Registrar</button>
-      </div>
   
-      <div *ngIf="submitted">
-        <h4>Componente registrado con éxito!</h4>
-        <button class="btn btn-success" (click)="newComponent()">Agregar</button>
-      </div>
+      </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteComponent()">
+        Eliminar
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateComponent()"
+      >
+        Actualizar
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentComponent">
+      <br />
+      <p>No se puede acceder a este componente...</p>
     </div>
   </div>
   

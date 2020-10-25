@@ -10,6 +10,7 @@ import { MachineListComponent } from './components/machine-list/machine-list.com
 import { MachineDetailsComponent } from './components/machine-details/machine-details.component';
 import { AddComponentComponent } from './components/add-component/add-component.component';
 import { ComponentListComponent } from './components/component-list/component-list.component';
+import { ComponentDetailsComponent } from './components/component-details/component-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ComponentListComponent } from './components/component-list/component-li
     MachineListComponent,
     MachineDetailsComponent,
     AddComponentComponent,
-    ComponentListComponent
+    ComponentListComponent,
+    ComponentDetailsComponent
   ],
   imports: [
     BrowserModule,
