@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Maquina"
+    }
+  },
+  "defaultProject": "Maquina",
+  "cli": {
+    "analytics": "69f2324b-66c7-44d2-bd1c-dc272ded239d"
+  }
 }
