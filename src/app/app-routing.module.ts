@@ -9,9 +9,9 @@ import { MachineListComponent } from './components/machine-list/machine-list.com
 
 const routes: Routes = [
   { path: '', redirectTo: 'machines', pathMatch: 'full' },
+  { path: 'machines/add', component: AddMachineComponent },
   { path: 'machines', component: MachineListComponent },
   { path: 'machines/:id', component: MachineDetailsComponent },
-  { path: 'machines/add', component: AddMachineComponent },
   { path: 'components/add', component: AddComponentComponent },
   { path: 'components', component: ComponentListComponent },
   { path: 'components/:id', component: ComponentDetailsComponent }

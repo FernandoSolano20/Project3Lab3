@@ -13,7 +13,7 @@ export class AddMachineComponent implements OnInit {
     name: '',
     description: '',
     lastDateMaintenance: new Date(),
-    state: false
+    state: ''
   };
   submitted = false;
   constructor(private machineService: MachineService) { }
@@ -48,7 +48,7 @@ export class AddMachineComponent implements OnInit {
       name: '',
       description: '',
       lastDateMaintenance: new Date(),
-      state: false
+      state: ''
     };
   }
 }

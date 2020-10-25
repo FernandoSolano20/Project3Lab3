@@ -11,6 +11,7 @@ import { MachineDetailsComponent } from './components/machine-details/machine-de
 import { AddComponentComponent } from './components/add-component/add-component.component';
 import { ComponentListComponent } from './components/component-list/component-list.component';
 import { ComponentDetailsComponent } from './components/component-details/component-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ComponentDetailsComponent } from './components/component-details/compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

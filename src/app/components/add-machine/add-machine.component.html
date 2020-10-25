@@ -1,18 +1,6 @@
 <div style="width: 400px; margin: auto;">
     <div class="submit-form">
-      <div *ngIf="!submitted">
-        <div class="form-group">
-          <label for="id">Id</label>
-          <input
-            type="number"
-            class="form-control"
-            id="id"
-            required
-            [(ngModel)]="machine.id"
-            name="id"
-          />
-        </div>
-  
+      <div *ngIf="!submitted">  
         <div class="form-group">
           <label for="name">Nombre</label>
           <input
@@ -51,17 +39,17 @@
           <input type="text"
             class="form-control"
             id="active"
+            [(ngModel)]="machine.state"
             name="state"
-            value="true"
           />
         </div>
   
-        <button (click)="saveMachine()" class="btn btn-success">Submit</button>
+        <button (click)="saveMachine()" class="btn btn-success">Enviar</button>
       </div>
   
       <div *ngIf="submitted">
-        <h4>You submitted successfully!</h4>
-        <button class="btn btn-success" (click)="newMachine()">Add</button>
+        <h4>Enviado correctamente!</h4>
+        <button class="btn btn-success" (click)="newMachine()">Agregar</button>
       </div>
     </div>
   </div>
