@@ -1,0 +1,3 @@
+Correr los siguientes comandos en consola
+npm install
+npm run start
