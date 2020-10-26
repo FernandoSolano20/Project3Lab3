@@ -54,6 +54,9 @@
         <h4>Componente registrado con éxito!</h4>
         <button class="btn btn-success" (click)="newComponent()">Agregar</button>
       </div>
+      <div *ngIf="error">
+        <h4>Error!</h4>
+      </div>
     </div>
   </div>
   

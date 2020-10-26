@@ -16,12 +16,19 @@ export class AddMachineComponent implements OnInit {
     state: ''
   };
   submitted = false;
+  error = false;
+
   constructor(private machineService: MachineService) { }
 
   ngOnInit(): void {
   }
 
   saveMachine(): void {
+    if(this.machine.name === '' || this.machine.description === ''){
+      this.error = true;
+      return;
+    }
+    this.error = false;
     const data = {
       id: this.machine.id,
       name: this.machine.name,

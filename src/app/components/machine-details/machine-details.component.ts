@@ -11,6 +11,7 @@ export class MachineDetailsComponent implements OnInit {
 
   currentMachine = null;
   message = '';
+  error = false;
 
   constructor(
     private machineService: MachineService,
@@ -36,6 +37,11 @@ export class MachineDetailsComponent implements OnInit {
   }
 
   updateMachine(): void {
+    if(this.currentMachine.name === '' || this.currentMachine.description === ''){
+      this.error = true;
+      return;
+    }
+    this.error = false;
     this.machineService.update(this.currentMachine.id, this.currentMachine)
       .subscribe(
         response => {

@@ -17,6 +17,7 @@ export class AddComponentComponent implements OnInit {
   };
   machines: any;
   submitted = false;
+  error = false;
 
   constructor(
     private componentService: ComponentService,
@@ -41,6 +42,11 @@ export class AddComponentComponent implements OnInit {
   }
 
   saveComponent(): void {
+    if(this.component.name === '' || this.component.description === ''){
+      this.error = true;
+      return;
+    }
+    this.error = false;
     const data = {
       name: this.component.name,
       description: this.component.description,

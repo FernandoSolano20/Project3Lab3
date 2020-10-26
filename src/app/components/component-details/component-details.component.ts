@@ -13,6 +13,7 @@ export class ComponentDetailsComponent implements OnInit {
   currentComponent = null;
   message = '';
   machines: any;
+  error = false;
 
   constructor(
     private componentService: ComponentService,
@@ -52,6 +53,11 @@ export class ComponentDetailsComponent implements OnInit {
   }
 
   updateComponent(): void {
+    if(this.currentComponent.name === '' || this.currentComponent.description === ''){
+      this.error = true;
+      return;
+    }
+    this.error = false;
     this.componentService.update(this.currentComponent.id, this.currentComponent)
       .subscribe(
         response => {
